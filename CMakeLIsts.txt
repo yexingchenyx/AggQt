@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.21.0)
+
+project(AggQt)
+
+add_subdirectory("agg-2.4")
+
+message(STATUS ${AGG_INCLUDE_DIR})
+
+
+
