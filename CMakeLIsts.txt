@@ -3,8 +3,11 @@ cmake_minimum_required(VERSION 3.21.0)
 project(AggQt)
 
 add_subdirectory("agg-2.4")
-
 message(STATUS ${AGG_INCLUDE_DIR})
 
+find_package(OpenCV)
+message(STATUS ${OpenCV_FOUND})
 
-
+add_executable(main "main/main000.cpp")
+target_include_directories(main PRIVATE ${AGG_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(main PRIVATE ${OpenCV_LIBS})
